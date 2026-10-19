@@ -5,7 +5,7 @@
  *
  * Both the `common` UI namespace and the `invoice` namespace (used by invoice
  * PDF generation and invoice previews) are registered in `resources` and `ns`
- * across all supported locales (en, es, fr, pt, de) ensuring consistent loading.
+ * across all supported locales (en, es, fr, pt) ensuring consistent loading.
  */
 const resources = {
   en: {
@@ -24,16 +24,12 @@ const resources = {
     common: require("./public/locales/pt/common.json"),
     invoice: require("./public/locales/pt/invoice.json"),
   },
-  de: {
-    common: require("./public/locales/en/common.json"),
-    invoice: require("./public/locales/de/invoice.json"),
-  },
 };
 
 module.exports = {
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es", "fr", "pt", "de"],
+    locales: ["en", "es", "fr", "pt"],
   },
   localePath: typeof window === "undefined" ? "./public/locales" : "/locales",
   defaultNS: "common",
